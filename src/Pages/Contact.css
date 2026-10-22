@@ -1,0 +1,234 @@
+
+.contact {
+  --contact-bg: #f7f9ff;
+  --contact-card: #ffffff;
+  --contact-text: #172b4d;
+  --contact-muted: #66758f;
+  --contact-border: #e2e9f5;
+  --contact-accent: #3478f6;
+  --contact-soft: #eaf1ff;
+
+  padding: 90px 24px 65px;
+  background: var(--contact-bg);
+  color: var(--contact-text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.app--dark .contact {
+  --contact-bg: #0b1120;
+  --contact-card: #121c30;
+  --contact-text: #edf3ff;
+  --contact-muted: #a5b2c9;
+  --contact-border: #263550;
+  --contact-accent: #78a7ff;
+  --contact-soft: #1b2b49;
+}
+
+.contact__container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact__header {
+  max-width: 650px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.contact__eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: var(--contact-accent);
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 2px;
+}
+
+.contact__header h2 {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 3.7rem);
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+}
+
+.contact__header h2 span {
+  color: var(--contact-accent);
+}
+
+.contact__header p {
+  max-width: 560px;
+  margin: 18px auto 0;
+  color: var(--contact-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.contact__link {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 15px;
+  padding: 22px;
+  border: 1px solid var(--contact-border);
+  border-radius: 18px;
+  background: var(--contact-card);
+  color: var(--contact-text);
+  text-decoration: none;
+  box-shadow: 0 8px 28px rgba(30, 65, 120, 0.04);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.3s ease;
+}
+
+.contact__link:hover {
+  transform: translateY(-4px);
+  border-color: var(--contact-accent);
+  box-shadow: 0 14px 30px rgba(52, 120, 246, 0.1);
+}
+
+.contact__link:focus-visible {
+  outline: 3px solid var(--contact-accent);
+  outline-offset: 4px;
+}
+
+.contact__icon {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 15px;
+  background: var(--contact-soft);
+  color: var(--contact-accent);
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.contact__link--instagram .contact__icon {
+  background: #fce7f3;
+  color: #c13584;
+}
+
+.contact__link--facebook .contact__icon {
+  background: #e5eeff;
+  color: #1877f2;
+}
+
+.contact__link--linkedin .contact__icon {
+  background: #e5eeff;
+  color: #0a66c2;
+  font-size: 1.15rem;
+}
+
+.contact__link--email .contact__icon {
+  background: #ddf7e8;
+  color: #16804a;
+}
+
+.contact__link-text {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact__link-text strong {
+  font-size: 1rem;
+}
+
+.contact__link-text small {
+  color: var(--contact-muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.contact__arrow {
+  flex-shrink: 0;
+  color: var(--contact-accent);
+  font-size: 1.3rem;
+  transition: transform 0.2s ease;
+}
+
+.contact__link:hover .contact__arrow {
+  transform: translate(3px, -3px);
+}
+
+.contact__footer {
+  margin: 35px 0 0;
+  color: var(--contact-muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+@media (max-width: 620px) {
+  .contact {
+    padding: 65px 18px 45px;
+  }
+
+  .contact__header {
+    margin-bottom: 30px;
+  }
+
+  .contact__grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .contact__link {
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact *,
+  .contact *::before,
+  .contact *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.contact__link--github .contact__icon {
+  background: #e8eaf0;
+  color: #24292f;
+}
+
+.app--dark .contact__link--github .contact__icon {
+  background: #273449;
+  color: #ffffff;
+}
+/* Contact cards layout */
+.contact__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* GitHub card ko centre mein rakhna */
+.contact__link--github {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: calc((100% - 20px) / 2);
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact__link--github {
+    grid-column: auto;
+    width: 100%;
+  }
+}

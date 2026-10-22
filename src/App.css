@@ -1,0 +1,23 @@
+
+.app {
+  min-height: 100vh;
+  background-color: #f8fafc;
+  color: #172033;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app--dark {
+  background-color: #111827;
+  color: #f8fafc;
+}
+
+.app--dark .navbar__name,
+.app--dark .navbar__link {
+  color: #f8fafc;
+}
+
+.app--dark .theme-toggle {
+  background-color: #1e293b;
+  color: #f8fafc;
+  border-color: #475569;
+}

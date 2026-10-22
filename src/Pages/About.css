@@ -1,0 +1,477 @@
+
+/* ===== ABOUT SECTION ===== */
+
+.about {
+  --about-accent: #2563eb;
+  --about-heading: #172033;
+  --about-text: #64748b;
+  --about-card: #f8faff;
+  --about-border: #e5edfb;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: center;
+  gap: clamp(30px, 5vw, 70px);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 75px 6%;
+  box-sizing: border-box;
+  overflow: hidden;
+  scroll-margin-top: 30px;
+}
+
+.about__content {
+  min-width: 0;
+  animation: aboutEnterLeft 0.7s ease both;
+}
+
+.about__eyebrow {
+  margin: 0 0 12px;
+  color: var(--about-heading);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.about__eyebrow span {
+  color: var(--about-accent);
+}
+
+.about__title {
+  margin: 0 0 18px;
+  color: var(--about-heading);
+  font-size: clamp(28px, 3.2vw, 42px);
+  font-weight: 750;
+  line-height: 1.2;
+  letter-spacing: -1.1px;
+}
+
+.about__title-arrow {
+  display: inline-block;
+  margin-left: 8px;
+  color: var(--about-accent);
+  font-size: 1.25em;
+  line-height: 0.8;
+  transition: transform 0.25s ease;
+}
+
+.about__title:hover .about__title-arrow {
+  transform: translateX(5px);
+}
+
+.about__description {
+  max-width: 510px;
+  margin: 0 0 24px;
+  color: var(--about-text);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* ===== FEATURE CARDS ===== */
+
+.about__features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.about__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  min-width: 0;
+  padding: 8px 0;
+  border-radius: 10px;
+  transition: transform 0.25s ease;
+}
+
+.about__feature:hover {
+  transform: translateY(-4px);
+}
+
+.about__feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: #eaf1ff;
+  color: var(--about-accent);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.about__feature h3 {
+  margin: 2px 0 4px;
+  color: var(--about-heading);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.about__feature p {
+  margin: 0;
+  color: var(--about-text);
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+/* ===== DOWNLOAD CV BUTTON ===== */
+
+.about__cv-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 42px;
+  padding: 0 18px;
+  border: 1px solid #93b8ff;
+  border-radius: 24px;
+  color: var(--about-accent);
+  background: transparent;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 650;
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.about__cv-button:hover {
+  color: #ffffff;
+  background: var(--about-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgb(37 99 235 / 20%);
+}
+
+/* ===== CODE EDITOR ILLUSTRATION ===== */
+
+.about__visual {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 0;
+  padding: 18px 0 65px;
+  animation: aboutEnterRight 0.8s ease both;
+}
+
+.about__visual::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 25px;
+  border: 1px solid #edf2fc;
+  border-radius: 22px;
+  background: linear-gradient(145deg, #f5f8ff, #ffffff);
+  content: "";
+}
+
+.about__editor {
+  width: 88%;
+  overflow: hidden;
+  border: 1px solid #263a5c;
+  border-radius: 13px;
+  background: #101e38;
+  box-shadow: 0 12px 28px rgb(15 23 42 / 13%);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about__editor:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 32px rgb(15 23 42 / 18%);
+}
+
+.about__editor-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 14px;
+  background: #152642;
+}
+
+.about__window-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.about__window-dot--red {
+  background: #ff6577;
+}
+
+.about__window-dot--yellow {
+  background: #ffd166;
+}
+
+.about__window-dot--green {
+  background: #35d07f;
+}
+
+.about__code {
+  margin: 0;
+  padding: 17px 18px 22px;
+  overflow-x: auto;
+  color: #d6e4ff;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: clamp(9px, 1vw, 12px);
+  line-height: 1.8;
+  text-align: left;
+  white-space: pre;
+}
+
+.about__code code {
+  display: block;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.about__code-blue {
+  color: #7ab8ff;
+}
+
+.about__code-green {
+  color: #a8e6a1;
+}
+
+/* ===== HANDWRITTEN NOTE ===== */
+
+.about__handwritten {
+  position: absolute;
+  right: 14%;
+  bottom: 22px;
+  color: var(--about-accent);
+  font-family: "Comic Sans MS", cursive;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.25;
+  transform: rotate(-9deg);
+  animation: aboutNoteFloat 3s ease-in-out infinite;
+}
+
+.about__handwritten span {
+  margin-left: 3px;
+  font-size: 20px;
+}
+
+.about__handwritten small {
+  display: block;
+  margin-top: 4px;
+  text-align: center;
+  letter-spacing: 4px;
+}
+
+/* ===== DARK THEME ===== */
+
+.app--dark .about {
+  --about-accent: #93c5fd;
+  --about-heading: #f1f5f9;
+  --about-text: #b0bdcf;
+  --about-card: #172033;
+  --about-border: #334155;
+}
+
+.app--dark .about__visual::before {
+  border-color: #29374c;
+  background: linear-gradient(145deg, #18243a, #111827);
+}
+
+.app--dark .about__feature-icon {
+  background: #203452;
+  color: #93c5fd;
+}
+
+.app--dark .about__editor {
+  border-color: #354968;
+  box-shadow: 0 12px 30px rgb(0 0 0 / 22%);
+}
+
+.app--dark .about__editor-top {
+  background: #1b2b46;
+}
+
+.app--dark .about__cv-button {
+  border-color: #608ed5;
+}
+
+.app--dark .about__cv-button:hover {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes aboutEnterLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes aboutEnterRight {
+  from {
+    opacity: 0;
+    transform: translateX(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes aboutNoteFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-9deg);
+  }
+
+  50% {
+    transform: translateY(-5px) rotate(-6deg);
+  }
+}
+
+/* ===== TABLET ===== */
+
+@media (max-width: 900px) {
+  .about {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    gap: 28px;
+    padding: 60px 5%;
+  }
+
+  .about__features {
+    gap: 8px;
+  }
+
+  .about__feature {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .about__code {
+    padding: 14px 12px 18px;
+    font-size: 10px;
+  }
+
+  .about__handwritten {
+    right: 10%;
+  }
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 650px) {
+  .about {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 35px;
+    padding: 48px 6%;
+  }
+
+  .about__title {
+    font-size: clamp(29px, 7vw, 38px);
+  }
+
+  .about__description {
+    font-size: 14px;
+  }
+
+  .about__features {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .about__feature {
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .about__feature h3 {
+    font-size: 11px;
+  }
+
+  .about__feature p {
+    font-size: 10px;
+  }
+
+  .about__visual {
+    width: 100%;
+    padding-top: 18px;
+    padding-bottom: 65px;
+  }
+
+  .about__editor {
+    width: 92%;
+  }
+
+  .about__code {
+    padding: 17px 14px 20px;
+    font-size: clamp(9px, 2.4vw, 12px);
+  }
+
+  .about__handwritten {
+    right: 13%;
+    bottom: 19px;
+    font-size: 18px;
+  }
+}
+
+/* ===== SMALL MOBILE ===== */
+
+@media (max-width: 380px) {
+  .about {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .about__features {
+    gap: 7px;
+  }
+
+  .about__feature-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .about__feature h3 {
+    font-size: 10px;
+  }
+
+  .about__feature p {
+    font-size: 9px;
+  }
+
+  .about__code {
+    padding: 14px 10px 18px;
+    font-size: 9px;
+  }
+}
+
+/* Accessibility: reduce motion when requested */
+
+@media (prefers-reduced-motion: reduce) {
+  .about__content,
+  .about__visual,
+  .about__handwritten {
+    animation: none;
+  }
+
+  .about__feature,
+  .about__editor,
+  .about__cv-button,
+  .about__title-arrow {
+    transition: none;
+  }
+}
