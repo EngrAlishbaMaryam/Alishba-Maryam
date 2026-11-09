@@ -198,6 +198,7 @@
   }
 }
 
+/* GitHub icon */
 .contact__link--github .contact__icon {
   background: #e8eaf0;
   color: #24292f;
@@ -207,28 +208,21 @@
   background: #273449;
   color: #ffffff;
 }
-/* Contact cards layout */
-.contact__grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
-}
 
-/* GitHub card ko centre mein rakhna */
+/* Desktop: GitHub card centered */
 .contact__link--github {
   grid-column: 1 / -1;
   justify-self: center;
   width: calc((100% - 20px) / 2);
+  box-sizing: border-box;
 }
 
-/* Mobile responsive */
-@media (max-width: 600px) {
-  .contact__grid {
-    grid-template-columns: 1fr;
-  }
-
+/* Mobile: all cards equal width */
+@media (max-width: 620px) {
   .contact__link--github {
     grid-column: auto;
+    justify-self: stretch;
     width: 100%;
+    box-sizing: border-box;
   }
 }

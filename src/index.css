@@ -110,8 +110,7 @@ code {
   background: var(--code-bg);
 }
 
-
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 85px;
+  scroll-padding-top: 35px;
 }

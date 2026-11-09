@@ -287,3 +287,15 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Light and dark theme text colors */
+.services__hero h1,
+.services__card h2,
+.services__benefits h3,
+.services__cta h2 {
+  color: var(--services-text);
+}
+
+.services__hero h1 span {
+  color: var(--services-accent);
+}
